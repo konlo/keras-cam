@@ -9,7 +9,7 @@ import argparse
 def train(dataset_path):
         model = get_model()
         X, y = load_inria_person(dataset_path)
-	print "Training.."
+	print ("Training..")
         checkpoint_path="weights.{epoch:02d}-{val_loss:.2f}.hdf5"
         checkpoint = ModelCheckpoint(checkpoint_path, monitor='val_loss', verbose=0, save_best_only=False, save_weights_only=False, mode='auto')
         model.fit(X, y, nb_epoch=40, batch_size=32, validation_split=0.2, verbose=1, callbacks=[checkpoint])
