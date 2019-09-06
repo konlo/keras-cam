@@ -58,4 +58,4 @@ if __name__ == '__main__':
 	if args.train:
 		train(args.dataset_path)
 	else:
-  	visualize_class_activation_map(args.model_path, args.image_path,  args.output_path)
+		visualize_class_activation_map(args.model_path, args.image_path, args.output_path)
