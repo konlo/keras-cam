@@ -73,7 +73,7 @@ def load_model_weights(model, weights_path):
         model.layers[k].set_weights(weights)
         model.layers[k].trainable = False
     f.close()
-    print 'Model loaded.'
+    print('Model loaded.')
     return model
 
 def get_output_layer(model, layer_name):
