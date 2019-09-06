@@ -33,7 +33,7 @@ def visualize_class_activation_map(model_path, img_path, output_path):
         cam = np.zeros(dtype = np.float32, shape = conv_outputs.shape[1:3])
         for i, w in enumerate(class_weights[:, 1]):
                 cam += w * conv_outputs[i, :, :]
-        print ("predictions", predictions)
+        print "predictions", predictions
         cam /= np.max(cam)
         cam = cv2.resize(cam, (height, width))
         heatmap = cv2.applyColorMap(np.uint8(255*cam), cv2.COLORMAP_JET)
@@ -55,7 +55,7 @@ def get_args():
 
 if __name__ == '__main__':
 	args = get_args()
-        if args.train:
-                train(args.dataset_path)
-        else:
-                visualize_class_activation_map(args.model_path, args.image_path, args.output_path)
+	if args.train:
+		train(args.dataset_path)
+	else:
+  	visualize_class_activation_map(args.model_path, args.image_path, args.output_path)
